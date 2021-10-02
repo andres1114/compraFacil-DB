@@ -33,7 +33,8 @@ CREATE TABLE almacen (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nombre_almacen VARCHAR(255) NOT NULL,
     pagina_web_almacen CHAR(255) NOT NULL,
-    id_imagen INT NOT NULL,
+    id_imagen INT NULL,
+    activo BOOLEAN NOT NULL,
 
     FOREIGN KEY (id_imagen) REFERENCES imagen (id)
         ON UPDATE CASCADE
@@ -45,7 +46,8 @@ CREATE TABLE producto (
     id_almacen INT NOT NULL,
     nombre_producto CHAR(255) NOT NULL,
     precio_producto BIGINT NOT NULL,
-    id_imagen INT NOT NULL,
+    id_imagen INT NULL,
+    activo BOOLEAN NOT NULL,
 
     FOREIGN KEY (id_imagen) REFERENCES imagen (id)
         ON UPDATE CASCADE
