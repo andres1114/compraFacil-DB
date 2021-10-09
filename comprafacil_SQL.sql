@@ -38,7 +38,7 @@ CREATE TABLE almacen (
 
     FOREIGN KEY (id_imagen) REFERENCES imagen (id)
         ON UPDATE CASCADE
-        ON DELETE CASCADE
+        ON DELETE SET NULL
 ) DEFAULT CHARACTER SET = utf8 COMMENT = 'tbl_01' ENGINE = InnoDB;
 
 CREATE TABLE producto (
@@ -51,7 +51,7 @@ CREATE TABLE producto (
 
     FOREIGN KEY (id_imagen) REFERENCES imagen (id)
         ON UPDATE CASCADE
-        ON DELETE CASCADE
+        ON DELETE SET NULL
 ) DEFAULT CHARACTER SET = utf8 COMMENT = 'tbl_01' ENGINE = InnoDB;
 
 CREATE TABLE empleado (
