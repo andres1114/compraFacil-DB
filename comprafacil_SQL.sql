@@ -195,6 +195,20 @@ CREATE TABLE scrapy_spiders (
         ON DELETE CASCADE
 ) DEFAULT CHARACTER SET = utf8 COMMENT = 'tbl_01' ENGINE = InnoDB;
 
+CREATE TABLE scrapped_file_configuration (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    domain_id INT NOT NULL,
+    item_1_start_string CHAR(255) NULL,
+    item_1_end_string CHAR(255) NULL,
+    item_2_start_string CHAR(255) NULL,
+    item_2_end_string CHAR(255) NULL,
+    active BOOLEAN NOT NULL,
+
+    FOREIGN KEY (domain_id) REFERENCES almacen (id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+) DEFAULT CHARACTER SET = utf8 COMMENT = 'tbl_01' ENGINE = InnoDB;
+
 INSERT INTO tipo_usuario (valor_tipo_usuario, descripcion_tipo_usuario, pagina_redireccion) VALUES (1, 'Administrador de sistema', 'index.php'), (2, 'Usuario empleado', 'index.php');
 INSERT INTO usuario (nombre_usuario, contrasena_md5, contrasena_sha256, id_tipo_usuario, activo) VALUES ('admin', MD5('admin'), 'RzZKZ1VFZWhhUk5Ydkc2UGsrTmFIUT09', 1, TRUE);
 INSERT INTO tipo_identificacion (nombre_tipo_identificacion) VALUES ('Cédula de ciudadania'), ('Cédula extranjera'), ('NIT');
