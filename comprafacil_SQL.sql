@@ -209,7 +209,7 @@ CREATE TABLE scrapped_file_configuration (
         ON DELETE CASCADE
 ) DEFAULT CHARACTER SET = utf8 COMMENT = 'tbl_01' ENGINE = InnoDB;
 
-INSERT INTO tipo_usuario (valor_tipo_usuario, descripcion_tipo_usuario, pagina_redireccion) VALUES (1, 'Administrador de sistema', 'index.php'), (2, 'Usuario empleado', 'index.php');
+INSERT INTO tipo_usuario (valor_tipo_usuario, descripcion_tipo_usuario, pagina_redireccion) VALUES (1, 'Administrador de sistema', 'index_a.php'), (2, 'Usuario empleado', 'index_a.php');
 INSERT INTO usuario (nombre_usuario, contrasena_md5, contrasena_sha256, id_tipo_usuario, activo) VALUES ('admin', MD5('admin'), 'RzZKZ1VFZWhhUk5Ydkc2UGsrTmFIUT09', 1, TRUE);
 INSERT INTO tipo_identificacion (nombre_tipo_identificacion) VALUES ('Cédula de ciudadania'), ('Cédula extranjera'), ('NIT');
 INSERT INTO scrapy_header_type (header_type) VALUES ('http_cookie') ,('http_header');
