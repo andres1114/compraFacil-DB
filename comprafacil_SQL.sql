@@ -160,7 +160,7 @@ CREATE TABLE scrapy_headers (
     header_type INT NOT NULL,
     header_status VARCHAR(255),
     created_at DATE NOT NULL,
-    days_until_expiration INTEGER NOT NULL,
+    days_until_expiration INTEGER NULL,
     active BOOLEAN NOT NULL,
 
     FOREIGN KEY (domain_id) REFERENCES almacen (id)
