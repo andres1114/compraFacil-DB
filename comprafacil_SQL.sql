@@ -159,6 +159,7 @@ CREATE TABLE scrapy_headers (
     header_value TEXT NOT NULL,
     header_type INT NOT NULL,
     header_status VARCHAR(255),
+    created_at DATE NOT NULL,
     days_until_expiration INTEGER NOT NULL,
     active BOOLEAN NOT NULL,
 
